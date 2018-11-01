@@ -1,4 +1,3 @@
-
 import sys
 cimport cython
 cimport hpdf
@@ -7,7 +6,7 @@ include "units.pxi"
 from libc.math cimport cos, sin
 
 @cython.callspec("__cdecl")
-cdef void error_handler(int error_no, unsigned int detail_no, void *user_data):
+cdef void error_handler(long unsigned int error_no, long unsigned int detail_no, void *user_data):
     print("ERROR: %s, detail_no=%u" % (error_detail[error_no], detail_no))
 
 cdef class Canvas(object):
